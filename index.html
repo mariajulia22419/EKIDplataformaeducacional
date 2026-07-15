@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiPlataforma de Ensino</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">EduPlat</div>
+        <nav>
+            <button onclick="irPara('inicio')">Início</button>
+            <button onclick="irPara('planos')">Planos</button>
+            <button onclick="abrirAreaPais()">Área dos Pais</button>
+        </nav>
+        <div class="acessibilidade">
+            <button onclick="alterarFonte(1)" title="Aumentar Letra">A+</button>
+            <button onclick="alterarFonte(-1)" title="Diminuir Letra">A-</button>
+            <button id="btn-tema" onclick="alternarTema()">Modo Escuro</button>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+        
+        <section id="tela-inicio" class="tela ativa">
+            <h1>Selecione o seu Ano Escolar</h1>
+            
+            <h3>Ensino Fundamental</h3>
+            <div class="grade-anos">
+                <button onclick="selecionarAno('1ef')">1º Ano (EF)</button>
+                <button onclick="selecionarAno('2ef')">2º Ano (EF)</button>
+                <button onclick="selecionarAno('3ef')">3º Ano (EF)</button>
+                <button onclick="selecionarAno('4ef')">4º Ano (EF)</button>
+                <button onclick="selecionarAno('5ef')">5º Ano (EF)</button>
+                <button onclick="selecionarAno('6ef')">6º Ano (EF)</button>
+                <button onclick="selecionarAno('7ef')">7º Ano (EF)</button>
+                <button onclick="selecionarAno('8ef')">8º Ano (EF)</button>
+                <button onclick="selecionarAno('9ef')">9º Ano (EF)</button>
+            </div>
+
+            <h3>Ensino Médio</h3>
+            <div class="grade-anos">
+                <button onclick="selecionarAno('1em')">1º Ano (EM)</button>
+            </div>
+        </section>
+
+        <section id="tela-materias" class="tela">
+            <button class="btn-voltar" onclick="irPara('inicio')">← Voltar</button>
+            <h2 id="titulo-ano">Matérias</h2>
+            <div id="grade-materias" class="grade-materias">
+                </div>
+        </section>
+
+        <section id="tela-quiz" class="tela">
+            <button class="btn-voltar" onclick="voltarParaMaterias()">← Voltar para Matérias</button>
+            <div class="card-quiz">
+                <h2 id="quiz-materia-titulo">Matéria</h2>
+                <div class="progresso">Pergunta <span id="num-pergunta">1</span> de 40</div>
+                <p id="pergunta-texto">Texto da pergunta aqui...</p>
+                <div id="opcoes-respostas">
+                    </div>
+                <div id="feedback" class="feedback-oculto"></div>
+                <button id="btn-proxima" onclick="proximaPergunta()" style="display: none;">Próxima Pergunta</button>
+            </div>
+        </section>
+
+        <section id="tela-pais" class="tela">
+            <button class="btn-voltar" onclick="irPara('inicio')">← Sair da Área dos Pais</button>
+            <h2>Área de Controle dos Pais</h2>
+            <p>Monitore o desempenho e progresso dos seus filhos.</p>
+            
+            <div class="dashboard-pais">
+                <div class="card-info">
+                    <h3>Desempenho Geral</h3>
+                    <p>Média de acertos: <strong style="color: var(--cor-principal);">85%</strong></p>
+                </div>
+                <div class="card-info">
+                    <h3>Tempo de Estudo</h3>
+                    <p>Tempo ativo esta semana: <strong>4h 32min</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tela-planos" class="tela">
+            <h2>Nossos Planos de Assinatura</h2>
+            <p>Tenha acesso ilimitado a todas as matérias e relatórios para os pais.</p>
+            <div class="grade-planos">
+                <div class="card-plano">
+                    <h3>Plano Mensal</h3>
+                    <p class="preco">R$ 59,99 <span>/mês</span></p>
+                    <button class="btn-assinar">Assinar Agora</button>
+                </div>
+                <div class="card-plano destaque">
+                    <span class="badge">Melhor Valor</span>
+                    <h3>Plano Anual</h3>
+                    <p class="preco">R$ 259,99 <span>/ano</span></p>
+                    <button class="btn-assinar">Assinar Agora</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
